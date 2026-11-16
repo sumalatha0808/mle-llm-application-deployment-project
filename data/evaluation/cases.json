@@ -1,0 +1,32 @@
+[
+  {
+    "case_id": "refund_supported",
+    "prompt": "What evidence is required for a duplicate-payment refund?",
+    "expected_terms": ["receipt", "transaction"],
+    "repeat": 2
+  },
+  {
+    "case_id": "account_access",
+    "prompt": "How should support handle a locked account?",
+    "expected_terms": ["identity", "reset"],
+    "repeat": 1
+  },
+  {
+    "case_id": "privacy_handoff",
+    "prompt": "A customer asks us to delete all personal data.",
+    "expected_terms": ["privacy", "human review"],
+    "repeat": 1
+  },
+  {
+    "case_id": "incident_status",
+    "prompt": "What should we communicate during an active incident?",
+    "expected_terms": ["status page", "confirmed"],
+    "repeat": 1
+  },
+  {
+    "case_id": "unsupported_policy",
+    "prompt": "Can we promise a lifetime subscription discount?",
+    "expected_terms": ["cannot confirm", "approved policy"],
+    "repeat": 1
+  }
+]
