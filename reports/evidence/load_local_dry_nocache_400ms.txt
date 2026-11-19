@@ -1,0 +1,9 @@
+# dry provider, DRY_LATENCY_MS=400, CACHE_TTL_SECONDS=0 (cache off; single-flight still dedups simultaneous identical prompts), MAX_CONCURRENT_REQUESTS=4
+requests=40 concurrency=5
+throughput_rps=11.03
+successful_requests=40
+successful_throughput_rps=11.03
+mean_latency_ms=428.84
+p95_latency_ms=452.46
+error_rate=0.00%
+provider_calls=24 of 40; queue_wait_ms median=0 max=0; provider_ms median=409 max=443

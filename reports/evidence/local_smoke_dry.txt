@@ -1,0 +1,26 @@
+$ curl -i /health
+HTTP/1.1 200 OK
+date: Wed, 18 Nov 2026 14:31:04 GMT
+server: uvicorn
+content-length: 15
+content-type: application/json
+
+{"status":"ok"}
+
+$ curl -i /ready
+HTTP/1.1 200 OK
+date: Wed, 18 Nov 2026 14:31:04 GMT
+server: uvicorn
+content-length: 169
+content-type: application/json
+
+{"status":"ready","provider":"dry","model":"dry-northstar-v1","release":"879cf20","environment":"development","trace_sink":"jsonl","cache":"process-local","problems":[]}
+
+$ POST /generate (refund, attempt 1)
+{"text":"Collect the customer's receipt and the transaction ID of both charges. Verify the duplicate in the billing system, then submit the refund to finance for review without promising an amount or date.","model":"dry-northstar-v1","usage":{"input_tokens":401,"output_tokens":49},"cost_usd":0.0,"cache_hit":false,"latency_ms":0.7030000001577719,"quality_score":1.0,"policy_topic":"refund","trace_id":"3363c29ac28041c287433f6da1796f4f"}
+$ POST /generate (refund, attempt 2)
+{"text":"Collect the customer's receipt and the transaction ID of both charges. Verify the duplicate in the billing system, then submit the refund to finance for review without promising an amount or date.","model":"dry-northstar-v1","usage":{"input_tokens":401,"output_tokens":49},"cost_usd":0.0,"cache_hit":true,"latency_ms":0.37560000009762007,"quality_score":1.0,"policy_topic":"refund","trace_id":"e4675e65c7e44d9db84d4e6e75dd3eda"}
+
+$ POST /generate blank prompt
+HTTP/1.1 422 Unprocessable Content
+{"detail":[{"type":"string_too_short","loc":["body","prompt"],"msg":"String should have at least 1 character","input":"   ","ctx":{"min_length":1}}]}

@@ -1,0 +1,7 @@
+requests=40 concurrency=5
+throughput_rps=6.32
+successful_requests=14
+successful_throughput_rps=2.21
+mean_latency_ms=718.04
+p95_latency_ms=2057.86
+error_rate=65.00%

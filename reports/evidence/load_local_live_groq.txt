@@ -1,0 +1,16 @@
+# live groq, local uvicorn (1 worker), cold cache, release 879cf20+wip, policy 84d477f800fd
+$ uv run python scripts/load_test.py --url http://127.0.0.1:8001 --requests 40 --concurrency 5
+requests=40 concurrency=5
+throughput_rps=41.69
+successful_requests=40
+successful_throughput_rps=41.69
+mean_latency_ms=93.11
+p95_latency_ms=378.27
+error_rate=0.00%
+# trace summary
+traces=40 errors=0 provider_calls=3 hits_or_shared=37
+ miss 2d552349ca5341048553dd88d4aa815d provider_ms=357 queue_ms=0.03 total_ms=358 usage={'input_tokens': 451, 'output_tokens': 30} cost=4.282e-05 q=1.0 ok None
+ miss 6b312a4cd33c433dafa3b98b24a0157a provider_ms=304 queue_ms=0.05 total_ms=304 usage={'input_tokens': 451, 'output_tokens': 30} cost=4.282e-05 q=1.0 ok None
+ miss c3e2b382c3ab4b5eacc6afa78f834bef provider_ms=589 queue_ms=0.04 total_ms=590 usage={'input_tokens': 451, 'output_tokens': 30} cost=4.282e-05 q=1.0 ok None
+quality mean=1.000 n=40 new_tokens_in=1353 out=90 cost_usd=0.000128
+server-side latency p95=304.1 ms

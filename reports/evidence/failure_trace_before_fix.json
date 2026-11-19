@@ -1,0 +1,61 @@
+{
+ "trace_id": "fe242c0e345b45ef848db27273c24d8b",
+ "name": "northstar-support-request",
+ "status": "error",
+ "error_type": "ProviderError",
+ "environment": "development",
+ "release": "879cf20",
+ "provider": "groq",
+ "model": "openai/gpt-oss-20b",
+ "policy_version": "1e997fc18bdd",
+ "policy_topic": "unsupported",
+ "cache_hit": false,
+ "latency_ms": 1333.7698000000273,
+ "stages": [
+  {
+   "name": "prompt-preparation",
+   "start_offset_ms": 0.02949999998236308,
+   "duration_ms": 0.11040000003958994,
+   "status": "ok",
+   "detail": {
+    "policy_version": "1e997fc18bdd",
+    "topic": "unsupported"
+   }
+  },
+  {
+   "name": "cache-lookup",
+   "start_offset_ms": 1.131600000007893,
+   "duration_ms": 0.047799999947528704,
+   "status": "ok",
+   "detail": {
+    "hit": false,
+    "entries": 0,
+    "scope": "process-local"
+   }
+  },
+  {
+   "name": "llm-generation",
+   "start_offset_ms": 1.2245000000348227,
+   "duration_ms": 1332.4949999998807,
+   "status": "error",
+   "detail": {
+    "queue_wait_ms": 0.07
+   }
+  }
+ ],
+ "usage": {
+  "input_tokens": 0,
+  "output_tokens": 0
+ },
+ "cost_usd": 0.0,
+ "quality_score": null,
+ "prompt_chars": 27,
+ "output_chars": 0,
+ "prompt_masked": null,
+ "output_masked": null,
+ "params": {
+  "max_tokens": 300,
+  "temperature": 0.0,
+  "top_p": 1.0
+ }
+}

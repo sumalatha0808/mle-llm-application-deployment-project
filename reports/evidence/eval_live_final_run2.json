@@ -1,0 +1,99 @@
+[
+  {
+    "case_id": "refund_supported",
+    "attempts": 2,
+    "errors": 0,
+    "terms_passed": true,
+    "cache_evidence": "verified: hits=[False, True], provider_calls=1",
+    "provider_calls": 1,
+    "quality_mean": 1.0,
+    "latency_ms": [
+      685.41,
+      0.34
+    ],
+    "input_tokens": 455,
+    "output_tokens": 94,
+    "cost_usd": 6.232e-05,
+    "trace_ids": [
+      "6ed37493aadf49e987141c9a5c247d52",
+      "2b2aa95ac4824bb987999c95bd2230ac"
+    ],
+    "answer": "For a duplicate\u2011payment refund, you must collect the customer\u2019s **receipt** (or invoice) and the **transaction ID** of both charges. Verify the duplicate in the **billing system**, then submit the refund to **finance** for review. Do not promise a refund amount or a date."
+  },
+  {
+    "case_id": "account_access",
+    "attempts": 1,
+    "errors": 0,
+    "terms_passed": true,
+    "cache_evidence": "N/A (single request)",
+    "provider_calls": 1,
+    "quality_mean": 1.0,
+    "latency_ms": [
+      185.48
+    ],
+    "input_tokens": 453,
+    "output_tokens": 63,
+    "cost_usd": 5.287e-05,
+    "trace_ids": [
+      "74623a37a4a641fcb96bccaa46c1af34"
+    ],
+    "answer": "Verify the customer\u2019s identity with the registered email and one additional security check before any change. Then trigger the standard password reset flow. Never reveal account details or bypass identity verification. Escalate suspected compromise to the security team."
+  },
+  {
+    "case_id": "privacy_handoff",
+    "attempts": 1,
+    "errors": 0,
+    "terms_passed": true,
+    "cache_evidence": "N/A (single request)",
+    "provider_calls": 1,
+    "quality_mean": 1.0,
+    "latency_ms": [
+      137.34
+    ],
+    "input_tokens": 455,
+    "output_tokens": 46,
+    "cost_usd": 4.792e-05,
+    "trace_ids": [
+      "2a72809cb17e489d89633d6bff5aabed"
+    ],
+    "answer": "I\u2019m sorry, but I can\u2019t delete the data myself. I will log the request and route it to the privacy team for human review."
+  },
+  {
+    "case_id": "incident_status",
+    "attempts": 1,
+    "errors": 0,
+    "terms_passed": true,
+    "cache_evidence": "N/A (single request)",
+    "provider_calls": 1,
+    "quality_mean": 1.0,
+    "latency_ms": [
+      227.08
+    ],
+    "input_tokens": 454,
+    "output_tokens": 49,
+    "cost_usd": 4.875e-05,
+    "trace_ids": [
+      "48e87c437b714e318adadebeaa40e8a3"
+    ],
+    "answer": "During an active incident, communicate only confirmed information and point customers to the status page for updates. Do not speculate about causes or recovery times that are not confirmed."
+  },
+  {
+    "case_id": "unsupported_policy",
+    "attempts": 1,
+    "errors": 0,
+    "terms_passed": true,
+    "cache_evidence": "N/A (single request)",
+    "provider_calls": 1,
+    "quality_mean": 1.0,
+    "latency_ms": [
+      382.0
+    ],
+    "input_tokens": 453,
+    "output_tokens": 34,
+    "cost_usd": 4.417e-05,
+    "trace_ids": [
+      "6c20d48d40384f7cb7520e2d75bc46b8"
+    ],
+    "answer": "I cannot confirm this from approved policy. Please refer the customer to a team lead for further assistance."
+  }
+]

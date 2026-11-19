@@ -14,3 +14,6 @@ reports/generated
 solution/tests
 assets
 .DS_Store
+generated
+tests
+reports

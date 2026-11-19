@@ -1,0 +1,44 @@
+# Reference Blueprint documenting the Render web service settings.
+# NOTE: create the service via New > Web Service (Free) in the dashboard, not
+# via Blueprint (Blueprint asks for a payment method). Mirror these settings.
+services:
+  - type: web
+    name: northstar-support-assistant
+    runtime: docker
+    plan: free            # one Free instance; no autoscaling on Free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      # Keep MODEL_PROVIDER=dry while the URL is shared publicly.
+      - key: MODEL_PROVIDER
+        value: dry
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-20b
+      - key: GROQ_API_KEY
+        sync: false       # set in the dashboard only, never committed
+      - key: CACHE_TTL_SECONDS
+        value: "300"
+      - key: MAX_CONCURRENT_REQUESTS
+        value: "4"
+      - key: REQUEST_TIMEOUT_SECONDS
+        value: "20"
+      - key: QUEUE_TIMEOUT_SECONDS
+        value: "10"
+      - key: TRACE_SINK
+        value: langfuse
+      - key: TRACE_SAMPLE_RATE
+        value: "1.0"
+      - key: TRACE_CONTENT_SAMPLE_RATE
+        value: "0"
+      - key: LANGFUSE_TRACING_ENVIRONMENT
+        value: production
+      - key: LANGFUSE_PUBLIC_KEY
+        sync: false
+      - key: LANGFUSE_SECRET_KEY
+        sync: false
+      - key: LANGFUSE_BASE_URL
+        value: https://cloud.langfuse.com
+      # LANGFUSE_RELEASE unset -> release = first 12 chars of RENDER_GIT_COMMIT
